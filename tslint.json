@@ -2,6 +2,7 @@
     "extends": ["tslint:latest", "tslint-config-prettier"],
     "rules": {
         "interface-name": false,
-        "member-access": [true, "no-public"]
+        "member-access": [true, "no-public"],
+        "semicolon": [true, "never"]
     }
 }

@@ -1,23 +1,42 @@
-import * as React from 'react';
-import { ButtonContainer } from './components/button-container';
-import { FormComponent } from './components/form-component';
-import { Header } from './components/header';
+import * as React from 'react'
+import * as API from './business/api'
+import { Header } from './components/header'
+import { SiteInfo } from './model/model'
 
-class App extends React.Component<{}, {}> {
-    render() {
-        return (
-            <div>
-                <Header title="Ball Fondlers" />
-                <FormComponent formName="Controlled Input Example">
-                    <p>
-                        Changing the color of the buttons in the component below
-                        should not case this text input to lose its value.
-                    </p>
-                    <ButtonContainer />
-                </FormComponent>
-            </div>
-        );
-    }
+interface State {
+    isLoaded: boolean
 }
 
-export { App };
+class App extends React.Component<{}, State> {
+    constructor(props: {}) {
+        super(props)
+        this.state = {
+            isLoaded: true
+        }
+    }
+
+    render() {
+        if (!this.state.isLoaded) {
+            return this.renderLoading()
+        } else {
+            return this.renderLoaded()
+        }
+    }
+
+    async componentDidMount() {
+        const config = await API.fetchSiteConfig()
+        
+    }
+
+    // Private render functions
+
+    private renderLoading = () => (
+        <Header title="Loading..." />
+    )
+
+    private renderLoaded = () => (
+        <Header title="Loaded!" />
+    )
+}
+
+export { App }

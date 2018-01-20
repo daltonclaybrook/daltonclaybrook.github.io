@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Button } from './button';
+import * as React from 'react'
+import { Button } from './button'
 
 const ButtonContainer = () => (
     <>
@@ -7,6 +7,6 @@ const ButtonContainer = () => (
         <br />
         <Button color="white">I have white text</Button>
     </>
-);
+)
 
-export { ButtonContainer };
+export { ButtonContainer }
