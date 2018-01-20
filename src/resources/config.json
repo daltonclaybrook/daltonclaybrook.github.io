@@ -1,0 +1,179 @@
+{
+    "name": "Dalton Claybrook",
+    "title": "",
+    "location": "Dallas, TX",
+    "imageURL": "http://dalton.codes/assets/images/profile.png",
+    "links": {
+        "gitHub": "https://github.com/daltonclaybrook",
+        "twitter": "https://twitter.com/daltonclaybrook",
+        "stackOverflow": "http://stackoverflow.com/users/907186/daltonclaybrook",
+        "linkedIn": "https://www.linkedin.com/in/dalton-claybrook-b7409629"
+    },
+    "skills": [
+        {
+            "name": "Swift 4.0",
+            "level": 1.0,
+            "levelDescription": "Expert"
+        },
+        {
+            "name": "Objective-C",
+            "level": 1.0,
+            "levelDescription": "Expert"
+        },
+        {
+            "name": "AWS (EC2, S3, RDS)",
+            "level": 0.8,
+            "levelDescription": "Expert"
+        },
+        {
+            "name": "Docker",
+            "level": 0.8,
+            "levelDescription": "Pro"
+        },
+        {
+            "name": "Go",
+            "level": 0.6,
+            "levelDescription": "Enthusiast"
+        },
+        {
+            "name": "Vapor Web Framework",
+            "level": 0.9,
+            "levelDescription": "Pro"
+        },
+        {
+            "name": "Ethereum Smart Contracts",
+            "level": 0.5,
+            "levelDescription": "Enthusiast"
+        }
+    ],
+    "featuredProject": {
+        "name": "GitHub - TweenController",
+        "link": "https://github.com/daltonclaybrook/tween-controller",
+        "description": "On the surface, TweenController makes it easy to build interactive menus and tutorials. Under the hood, it's a simple but powerful toolkit to interpolate between values that are Tweenable."
+    },
+    "latestProjects": [
+        {
+            "name": "Lead Developer of the AWE iOS Framework",
+            "link": "https://www.bottlerocketstudios.com/expertise/tv-everywhere-platform",
+            "description": "AWE is the powerful TV Everywhere app platform for branded video delivery and engagement across all major platforms. AWE is the recipient of the 2016 Cablefax Digital Award for Best TV Everywhere Technology. This platform powers some of the worlds biggest television networks, such as NBC, USA, HGTV, and Hallmark Channel."
+        },
+        {
+            "name": "Lead Developer of PinYada for iOS",
+            "link": "http://pinyadaapp.com/",
+            "description": "Make someone's day with PinYada, the free messaging app that is all about making someone's day and having your day made. It's super easy to pin a Yada! Choose whose day you want to make, create your day-making message and pin it to the perfect time or place. The smallest moments can have the biggest impact so when you're inspired to make someone's day, PinYada!"
+        },
+        {
+            "name": "Lead Developer of Catter for iOS",
+            "link": "https://itunes.apple.com/us/app/catter/id989485920",
+            "description": "Cats are crazy. That’s why we love them. And that’s why we created Catter. Our cats do weird and crazy stuff all the time and we wanted a cat-only place to share our cat tales as soon as they happened … and then we wanted to read other people’s cat tales when we were bored … in the bathroom."
+        }
+    ],
+    "buzzWords": [
+        "Swift", 
+        "Objective-C", 
+        "Golang", 
+        "Xcode", 
+        "Instruments", 
+        "LLDB", 
+        "iOS SDK", 
+        "macOS SDK", 
+        "VS Code", 
+        "Atom", 
+        "Node.js", 
+        "Sails.js", 
+        "RESTful Web Services", 
+        "JSON", 
+        "HLS", 
+        "Git", 
+        "Jenkins", 
+        "Bitrise", 
+        "GoF - Design Patterns", 
+        "AWS (EC2, S3, RDS, Lambda)", 
+        "Game Development", 
+        "Unity3D"
+    ],
+    "otherProjects": [
+        {
+            "name": "\"Today I Learned\" for Amazon Echo (Alexa)",
+            "link": "https://www.amazon.com/Dalton-Claybrook-Today-I-Learned/dp/B01HPJ43TM",
+            "description": "Today I Learned takes the top posts on the “/r/todayilearned” subreddit and reads them to you through your Alexa-powered device.",
+            "ctaText": "View on Amazon"
+        },
+        {
+            "name": "Go Transfer",
+            "link": "https://github.com/daltonclaybrook/go-transfer",
+            "description": "Go Transfer is an application written in Go used to tranfer files over HTTP from one client to another, without the need for file storage.",
+            "ctaText": "View on GitHub"
+        },
+        {
+            "name": "Ad Stitcher",
+            "link": "https://github.com/daltonclaybrook/ad-stitcher",
+            "description": "Ad Stitcher is a proof-of-concept application written in Node.js using Sails.js. It can be used to stitch a video ad slot into a live HLS playlist.",
+            "ctaText": "View on GitHub"
+        },
+        {
+            "name": "Barnsley Fern",
+            "link": "https://github.com/daltonclaybrook/barnsley-fern",
+            "description": "This is an implementation of the Barnsley Fern in Swift using Core Graphics.",
+            "ctaText": "View on GitHub"
+        },
+        {
+            "name": "SpaceFactoryNetworking",
+            "link": "https://github.com/daltonclaybrook/SpaceFactoryNetworking",
+            "description": "SpaceFactoryNetworking is a collection of classes useful for fetching and persisting file data. It is built on top of NSURLSession.",
+            "ctaText": "View on GitHub"
+        },
+        {
+            "name": "SFSInterlacedImageView",
+            "link": "https://github.com/daltonclaybrook/SFSInterlacedImageView",
+            "description": "SFSInterlacedImageView is a user interface component for iOS. It is a subclass of UIImageView that downloads a PNG image from a given URL. If the image is Interlaced, the image view displays the image progressively as it downloads the image.",
+            "ctaText": "View on GitHub"
+        },
+        {
+            "name": "MCPixelArt",
+            "link": "http://www.planetminecraft.com/mod/pixel-art-generator/",
+            "description": "MCPixelArt is a utility for macOS / Windows used to create Minecraft .schematic files from image files. These schematics can be imported using MCEdit.",
+            "ctaText": "View on planetminecraft.com"
+        }
+    ],
+    "work": [
+        {
+            "title": "Senior iOS Developer",
+            "company": "Match.com",
+            "description": "Match Group is the Global Leader in Dating, with a portfolio of over 45 brands.",
+            "startDate": "2017-01-22T18:00:00-06:00",
+            "endDate": null
+        },
+        {
+            "title": "Lead Software Engineer (iOS)",
+            "company": "Bottle Rocket",
+            "description": "Bottle Rocket makes iOS and Android applications for some of the largest brands in the world, such as Starwood Hotels, Coca-Cola, Chick-fil-A, NBC, and NPR.",
+            "startDate": "2013-06-22T18:00:00-06:00",
+            "endDate": "2017-01-22T18:00:00-06:00"
+        },
+        {
+            "title": "Founder / Software Engineer",
+            "company": "Claybrook Software",
+            "description": "Claybrook Software develops applications for the iOS platform (iPhone, iPad, etc.) independently and on a contract basis for clients.",
+            "startDate": "2010-07-15T18:00:00-06:00",
+            "endDate": "2013-06-22T18:00:00-06:00"
+        }
+    ],
+    "reviews": [
+        {
+            "quote": "Thanks! This worked for me =) now I understand it a lot better too",
+            "name": "spaderdabomb",
+            "description": "Stack Overflow user"
+        },
+        {
+            "quote": "Best app ever! I love kitties!",
+            "name": "Astone515",
+            "description": "Review of Catter on iTunes"
+        },
+        {
+            "quote": "This app is great! I use it everyday and it really helps out a lot! Also, it's a lot of fun! I highly recommend this!",
+            "name": "Eheike",
+            "description": "Review of PinYada on iTunes"
+        }
+    ]
+}

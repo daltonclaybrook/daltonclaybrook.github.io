@@ -1,8 +1,8 @@
 {
-  "name": "react-boilerplate",
+  "name": "dalton.codes",
   "private": true,
   "version": "0.1.0",
-  "author": "D&D Software Group",
+  "author": "Dalton Claybrook",
   "contributors": [
     "Drew Wyatt <drew.j.wyatt@gmail.com>",
     "Dalton Claybrook <daltonclaybrook@gmail.com>"
@@ -10,7 +10,7 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:dd-group/react-boilerplate.git"
+    "url": "git@github.com:daltonclaybrook/daltonclaybrook.github.io.git"
   },
   "scripts": {
     "start": "webpack-dev-server",
