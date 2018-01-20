@@ -1,9 +1,17 @@
 {
-  "name": "dalton-starter-project",
+  "name": "react-boilerplate",
+  "private": true,
   "version": "0.1.0",
-  "main": "index.js",
-  "author": "Drew Wyatt <drew.j.wyatt@gmail.com>",
-  "license": "MIT",
+  "author": "D&D Software Group",
+  "contributors": [
+    "Drew Wyatt <drew.j.wyatt@gmail.com>",
+    "Dalton Claybrook <daltonclaybrook@gmail.com>"
+  ],
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:dd-group/react-boilerplate.git"
+  },
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack"
