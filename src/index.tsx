@@ -7,17 +7,21 @@ import { App } from './app';
 const div = document.createElement('div');
 document.body.appendChild(div);
 
-
-render(<AppContainer><App /></AppContainer>, div);
+render(
+    <AppContainer>
+        <App />
+    </AppContainer>,
+    div,
+);
 
 if ((module as any).hot) {
-	(module as any).hot.accept('./app', () => {
-		const AppComponent = require('./app').App;
-		render(
-			<AppContainer>
-				<AppComponent />
-			</AppContainer>,
-			div,
-		);
-	});
+    (module as any).hot.accept('./app', () => {
+        const AppComponent = require('./app').App;
+        render(
+            <AppContainer>
+                <AppComponent />
+            </AppContainer>,
+            div,
+        );
+    });
 }
