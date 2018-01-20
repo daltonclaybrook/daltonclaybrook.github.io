@@ -1,17 +1,23 @@
 import * as React from 'react';
 import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import { App } from './app';
 
-const div = document.getElementById('app');
+// Create the div to bootstrap to and add it to the DOM
+const div = document.createElement('div');
+document.body.appendChild(div);
 
-interface Props {
-	children?: any;
-	color: string;
+
+render(<AppContainer><App /></AppContainer>, div);
+
+if ((module as any).hot) {
+	(module as any).hot.accept('./app', () => {
+		const AppComponent = require('./app').App;
+		render(
+			<AppContainer>
+				<AppComponent />
+			</AppContainer>,
+			div,
+		);
+	});
 }
-
-const HelloWorld = (props: Props) => (
-	<div style={{ background: props.color }}>{props.children}</div>
-);
-
-const Text = (props: Props) => (<p style={{ color: props.color }}>{props.children}</p>);
-
-render(<HelloWorld color="blue"><Text color="white">Awesome</Text></HelloWorld>, div);
