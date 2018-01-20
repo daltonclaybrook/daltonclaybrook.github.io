@@ -4,7 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-	"entry": './src/index.tsx',
+	"entry": [
+		'react-hot-loader/patch',
+		'./src/index.tsx',
+	],
 	"output": {
 		path: path.resolve('./dist'),
 		filename: 'bundle.js',
@@ -16,7 +19,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.tsx?$/,
-				use: 'ts-loader',
+				use: ['react-hot-loader/webpack', 'ts-loader'],
 				exclude: /node_modules/
 			}
 		]
@@ -27,5 +30,8 @@ module.exports = {
 		// TODO: make sure these are only used in dev env
 		new webpack.NamedModulesPlugin(), // make module names human readable in console for easier debugging
 		new webpack.HotModuleReplacementPlugin() // enable HMR 
-	]
+	],
+	devServer: {
+		hot: true
+	},
 };
