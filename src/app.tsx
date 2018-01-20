@@ -1,31 +1,31 @@
 import * as React from 'react'
 import * as API from './business/api'
+import { Bio } from './components/bio'
+import { FeaturedProjects } from './components/featured-projects'
 import { Header } from './components/header'
 import { SiteInfo } from './model/model'
 
 interface State {
-    isLoaded: boolean
+    siteInfo?: SiteInfo
 }
 
 class App extends React.Component<{}, State> {
     constructor(props: {}) {
         super(props)
-        this.state = {
-            isLoaded: true
-        }
+        this.state = {}
     }
 
     render() {
-        if (!this.state.isLoaded) {
-            return this.renderLoading()
+        if (this.state.siteInfo) {
+            return this.renderLoaded(this.state.siteInfo)
         } else {
-            return this.renderLoaded()
+            return this.renderLoading()
         }
     }
 
     async componentDidMount() {
-        const config = await API.fetchSiteConfig()
-        
+        const info = await API.fetchSiteInfo()
+        this.setState({ siteInfo: info })
     }
 
     // Private render functions
@@ -34,8 +34,14 @@ class App extends React.Component<{}, State> {
         <Header title="Loading..." />
     )
 
-    private renderLoaded = () => (
-        <Header title="Loaded!" />
+    private renderLoaded = (siteInfo: SiteInfo) => (
+        <>
+            <Header title="Loaded!" />
+            <main>
+                <Bio />
+                <FeaturedProjects {...siteInfo} />
+            </main>
+        </>
     )
 }
 
