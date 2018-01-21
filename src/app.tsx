@@ -1,8 +1,11 @@
+import * as classNames from 'classnames'
 import * as React from 'react'
+import './app.css'
 import * as API from './business/api'
 import { Bio } from './components/bio'
 import { Contact } from './components/contact'
 import { FeaturedProjects } from './components/featured-projects'
+import { Footer } from './components/footer'
 import { Header } from './components/header'
 import { SiteInfo } from './model/model'
 
@@ -36,14 +39,17 @@ class App extends React.Component<{}, State> {
     )
 
     private renderLoaded = (siteInfo: SiteInfo) => (
-        <>
+        <div className={classNames('container')}>
             <Header {...siteInfo} />
             <main>
-                <Bio />
-                <FeaturedProjects {...siteInfo} />
-                <Contact location={siteInfo.location} email={siteInfo.email} gitHubURL={siteInfo.links.gitHub} />
+                <div className={classNames('centered')}>
+                    <Bio />
+                    <FeaturedProjects {...siteInfo} />
+                    <Contact location={siteInfo.location} email={siteInfo.email} gitHubURL={siteInfo.links.gitHub} />
+                </div>
             </main>
-        </>
+            <Footer title="Footer title..." />
+        </div>
     )
 }
 

@@ -1,3 +1,4 @@
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -9,10 +10,10 @@ class Header extends React.Component<Props, {}> {
     render() {
         const { name, title } = this.props
         return (
-            <div>
+            <header className={classnames('header')}>
                 <h1>{name}</h1>
                 <h2>{title}</h2>
-            </div>
+            </header>
         )
     }
 }
