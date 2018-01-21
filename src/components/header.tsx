@@ -1,16 +1,18 @@
 import * as React from 'react'
 
 interface Props {
+    name: string
     title: string
 }
 
 class Header extends React.Component<Props, {}> {    
     render() {
-        const { title } = this.props
+        const { name, title } = this.props
         return (
-            <h1>
-                {title.toUpperCase()}
-            </h1>
+            <div>
+                <h1>{name}</h1>
+                <h2>{title}</h2>
+            </div>
         )
     }
 }

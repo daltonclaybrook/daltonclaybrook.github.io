@@ -31,12 +31,12 @@ class App extends React.Component<{}, State> {
     // Private render functions
 
     private renderLoading = () => (
-        <Header title="Loading..." />
+        <>Loading...</>
     )
 
     private renderLoaded = (siteInfo: SiteInfo) => (
         <>
-            <Header title="Loaded!" />
+            <Header {...siteInfo} />
             <main>
                 <Bio />
                 <FeaturedProjects {...siteInfo} />
