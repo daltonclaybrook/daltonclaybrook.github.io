@@ -42,10 +42,14 @@ class App extends React.Component<{}, State> {
         <div className={classNames('container')}>
             <Header {...siteInfo} />
             <main>
-                <div className={classNames('centered')}>
-                    <Bio />
-                    <FeaturedProjects {...siteInfo} />
-                    <Contact location={siteInfo.location} email={siteInfo.email} gitHubURL={siteInfo.links.gitHub} />
+                <div className={classNames('centered', 'horizontal-grid')}>
+                    <div className={classNames('grid-section', 'grid-left')}>
+                        <Bio />
+                        <FeaturedProjects {...siteInfo} />
+                    </div>
+                    <div className={classNames('grid-section', 'grid-right')}>
+                        <Contact location={siteInfo.location} email={siteInfo.email} gitHubURL={siteInfo.links.gitHub} />
+                    </div>
                 </div>
             </main>
             <Footer title="Footer title..." />
