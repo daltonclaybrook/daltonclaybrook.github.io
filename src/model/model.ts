@@ -2,6 +2,7 @@ interface SiteInfo {
     name: string
     title: string
     location: string
+    email: string
     imageURL: string
     links: Links
     skills: [Skill]

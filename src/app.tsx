@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as API from './business/api'
 import { Bio } from './components/bio'
+import { Contact } from './components/contact'
 import { FeaturedProjects } from './components/featured-projects'
 import { Header } from './components/header'
 import { SiteInfo } from './model/model'
@@ -40,6 +41,7 @@ class App extends React.Component<{}, State> {
             <main>
                 <Bio />
                 <FeaturedProjects {...siteInfo} />
+                <Contact location={siteInfo.location} email={siteInfo.email} gitHubURL={siteInfo.links.gitHub} />
             </main>
         </>
     )
