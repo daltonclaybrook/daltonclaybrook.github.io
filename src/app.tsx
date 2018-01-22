@@ -3,6 +3,7 @@ import * as React from 'react'
 import './app.css'
 import * as API from './business/api'
 import { Bio } from './components/bio'
+import { ColumnLayout } from './components/column-layout'
 import { Contact } from './components/contact'
 import { FeaturedProjects } from './components/featured-projects'
 import { Footer } from './components/footer'
@@ -41,19 +42,31 @@ class App extends React.Component<{}, State> {
     private renderLoaded = (siteInfo: SiteInfo) => (
         <div className={classNames('container')}>
             <Header {...siteInfo} />
-            <main>
-                <div className={classNames('centered', 'horizontal-grid')}>
-                    <div className={classNames('grid-section', 'grid-left')}>
-                        <Bio />
-                        <FeaturedProjects {...siteInfo} />
-                    </div>
-                    <div className={classNames('grid-section', 'grid-right')}>
-                        <Contact location={siteInfo.location} email={siteInfo.email} gitHubURL={siteInfo.links.gitHub} />
-                    </div>
-                </div>
-            </main>
+            <ColumnLayout columns={this.makeColumnElements(siteInfo)} />
             <Footer title="Footer title..." />
         </div>
+    )
+
+    // Helpers
+
+    private makeColumnElements = (siteInfo: SiteInfo): [JSX.Element] => {
+        return [
+            this.makeLeftColumnElement(siteInfo), 
+            this.makeRightColumnElement(siteInfo)
+        ]
+    }
+
+    private makeLeftColumnElement = (siteInfo: SiteInfo) => (
+        <>
+            <Bio />
+            <FeaturedProjects {...siteInfo} />
+        </>
+    )
+
+    private makeRightColumnElement = (siteInfo: SiteInfo) => (
+        <>
+            <Contact location={siteInfo.location} email={siteInfo.email} gitHubURL={siteInfo.links.gitHub} />
+        </>
     )
 }
 

@@ -44,22 +44,8 @@ ul {
     background: white;
 }
 
-/* .section {
-    padding: 10px;
-    width: 70%;
-    background: white;
-}
-
-.section.right {
-    margin: 10px 0 0 0;
-    width: calc(30% - 10px);
-    background: white;
-} */
-
-@media (max-width: 700px) {
-    .section, .section.right {
-        margin: 10px 0;
-        width: 100%;
-        background: white;
+@media (max-width: 1170px) {
+    .horizontal-grid {
+        grid-template-columns: 1fr;
     }
 }
