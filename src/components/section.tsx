@@ -1,4 +1,4 @@
-import * as classnames from 'classnames'
+import * as classNames from 'classnames'
 import * as React from 'react'
 
 interface Props extends React.HTMLProps<any> {
@@ -6,7 +6,7 @@ interface Props extends React.HTMLProps<any> {
 }
 
 const Section = ({ children, right }: Props) => (
-    <section className={classnames('section', { right })}>
+    <section className={classNames('section', { right })}>
         {children}
     </section>
 )

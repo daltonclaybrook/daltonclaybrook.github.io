@@ -42,19 +42,15 @@ class App extends React.Component<{}, State> {
     private renderLoaded = (siteInfo: SiteInfo) => (
         <div className={classNames('container')}>
             <Header {...siteInfo} />
-            <ColumnLayout columns={this.makeColumnElements(siteInfo)} />
+            <ColumnLayout>
+                {this.makeLeftColumnElement(siteInfo)}
+                {this.makeRightColumnElement(siteInfo)}
+            </ColumnLayout>
             <Footer title="Footer title..." />
         </div>
     )
 
     // Helpers
-
-    private makeColumnElements = (siteInfo: SiteInfo): [JSX.Element] => {
-        return [
-            this.makeLeftColumnElement(siteInfo), 
-            this.makeRightColumnElement(siteInfo)
-        ]
-    }
 
     private makeLeftColumnElement = (siteInfo: SiteInfo) => (
         <>

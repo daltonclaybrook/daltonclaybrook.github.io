@@ -1,18 +1,14 @@
 import * as classNames from 'classnames'
 import * as React from 'react'
 
-interface Props {
-    // each child array represents a column
-    columns: [JSX.Element]
-}
-
-class ColumnLayout extends React.Component<Props, {}> {
+class ColumnLayout extends React.Component<{}, {}> {
     render() {
-        const { columns } = this.props
+        const { children } = this.props
+        const columns = React.Children.map(children, this.makeColumnElement)
         return (
             <main>
                 <div className={classNames('centered', 'horizontal-grid')}>
-                    {columns.map(this.makeColumnElement)}
+                    {columns}
                 </div>
             </main>
         )
@@ -20,9 +16,9 @@ class ColumnLayout extends React.Component<Props, {}> {
 
     // Private methods
 
-    private makeColumnElement = (element: JSX.Element, index: number): JSX.Element => (
+    private makeColumnElement = (node: React.ReactChild, index: number) => (
         <div className={classNames('grid-section', `grid-${index}`)}>
-            {element}
+            {node}
         </div>
     )
 }
