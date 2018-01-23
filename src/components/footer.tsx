@@ -6,7 +6,7 @@ interface Props extends React.HTMLProps<HTMLElement> {
 }
 
 const Footer = ({ title, ...rest }: Props) => (
-    <footer className={classNames('footer')} {...rest}>
+    <footer className="footer" {...rest}>
         <h3>{title}</h3>
     </footer>
 )

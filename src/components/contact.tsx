@@ -15,6 +15,7 @@ class Contact extends React.Component<Props, {}> {
                 <ul>
                     <li>{location}</li>
                     <li><a href={`mailto:${email}`}>{email}</a></li>
+                    {/*TODO: find a better way to do this*/}
                     <li><a href={gitHubURL}>{gitHubURL.substring(8)}</a></li>
                 </ul>
             </Section>
