@@ -13,7 +13,7 @@ module.exports = {
 		filename: 'bundle.js',
 	},
 	resolve: {
-		extensions: ['.tsx', '.ts', '.js'],
+		extensions: ['.tsx', '.ts', '.js', '.css'],
 	},
 	module: {
 		rules: [
@@ -21,6 +21,10 @@ module.exports = {
 				test: /\.tsx?$/,
 				use: ['react-hot-loader/webpack', 'ts-loader'],
 				exclude: /node_modules/
+			},
+			{
+				test: /\.css/,
+				use: ['style-loader', 'css-loader']
 			}
 		]
 	},

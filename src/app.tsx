@@ -1,22 +1,69 @@
-import * as React from 'react';
-import { ButtonContainer } from './components/button-container';
-import { FormComponent } from './components/form-component';
+import * as classNames from 'classnames'
+import * as React from 'react'
+import './app.css'
+import * as API from './business/api'
+import { Bio } from './components/bio'
+import { ColumnLayout } from './components/column-layout'
+import { Contact } from './components/contact'
+import { FeaturedProjects } from './components/featured-projects'
+import { Footer } from './components/footer'
+import { Header } from './components/header'
+import { SiteInfo } from './model/model'
 
-class App extends React.Component<{}, {}> {
-    render() {
-        return (
-            <div>
-                <h1>This is the app component.</h1>
-                <FormComponent formName="Controlled Input Example">
-                    <p>
-                        Changing the color of the buttons in the component below
-                        should not case this text input to lose its value.
-                    </p>
-                    <ButtonContainer />
-                </FormComponent>
-            </div>
-        );
-    }
+interface State {
+    siteInfo?: SiteInfo
 }
 
-export { App };
+class App extends React.Component<{}, State> {
+    constructor(props: {}) {
+        super(props)
+        this.state = {}
+    }
+
+    render() {
+        if (this.state.siteInfo) {
+            return this.renderLoaded(this.state.siteInfo)
+        } else {
+            return this.renderLoading()
+        }
+    }
+
+    async componentDidMount() {
+        const info = await API.fetchSiteInfo()
+        this.setState({ siteInfo: info })
+    }
+
+    // Private render functions
+
+    private renderLoading = () => (
+        <>Loading...</>
+    )
+
+    private renderLoaded = (siteInfo: SiteInfo) => (
+        <div className={classNames('container')}>
+            <Header {...siteInfo} />
+            <ColumnLayout>
+                {this.makeLeftColumnElement(siteInfo)}
+                {this.makeRightColumnElement(siteInfo)}
+            </ColumnLayout>
+            <Footer title="Footer title..." />
+        </div>
+    )
+
+    // Helpers
+
+    private makeLeftColumnElement = (siteInfo: SiteInfo) => (
+        <>
+            <Bio />
+            <FeaturedProjects {...siteInfo} />
+        </>
+    )
+
+    private makeRightColumnElement = (siteInfo: SiteInfo) => (
+        <>
+            <Contact location={siteInfo.location} email={siteInfo.email} gitHubURL={siteInfo.links.gitHub} />
+        </>
+    )
+}
+
+export { App }
