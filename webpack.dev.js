@@ -1,6 +1,7 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = merge(common, {
     entry: [
@@ -19,6 +20,7 @@ module.exports = merge(common, {
     plugins: [
         new webpack.NamedModulesPlugin(), // make module names human readable in console for easier debugging
         new webpack.HotModuleReplacementPlugin(), // enable HMR
+        new Dotenv({ path: './.env', safe: true }),
     ],
     devServer: {
         hot: true,

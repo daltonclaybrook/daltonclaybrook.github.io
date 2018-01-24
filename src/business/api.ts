@@ -1,7 +1,7 @@
 import { SiteInfo } from '../model/model'
 
-const configURL = 'https://raw.githubusercontent.com/daltonclaybrook/daltonclaybrook.github.io/develop/resources/config.json'
-const bioURL = 'https://raw.githubusercontent.com/daltonclaybrook/daltonclaybrook.github.io/master/src/resources/bio.md'
+const configURL = process.env.CONFIG_URL || ''
+const bioURL = process.env.BIO_URL || ''
 
 export async function fetchSiteInfo(): Promise<SiteInfo> {
     const response = await fetch(configURL)
